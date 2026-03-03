@@ -15,9 +15,5 @@ export default function Home() {
     </Container>
   );
 }
-<img
-  src="/hero.jpg"
-  alt="Maoni"
-  style={{ width: "100%", marginBottom: "60px" }}
-/>
+
 
