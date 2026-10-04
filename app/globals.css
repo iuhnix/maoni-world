@@ -17,6 +17,33 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  color-scheme: light;
+}
+
+/* Dark theme: manual choice wins; otherwise the system setting decides. */
+[data-theme="dark"] {
+  --color-paper: #16120e;
+  --color-ink: #ece3d1;
+  --color-muted: #a2957f;
+  --color-line: #2e2620;
+  --color-accent: #d2764e;
+  --color-card: #221b14;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-paper: #16120e;
+    --color-ink: #ece3d1;
+    --color-muted: #a2957f;
+    --color-line: #2e2620;
+    --color-accent: #d2764e;
+    --color-card: #221b14;
+    color-scheme: dark;
+  }
+}
+
 body {
   background: var(--color-paper);
   color: var(--color-ink);

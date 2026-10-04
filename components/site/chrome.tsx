@@ -1,3 +1,5 @@
+import { ThemeToggle } from "./theme-toggle";
+
 export const CONTACT_EMAIL = "hello@maoni.store"; // TODO: confirm with Sion
 export const INSTAGRAM_URL = "https://www.instagram.com/maoni.world/";
 export const BLOG_URL = "https://blog.mylabproject.com/";
@@ -35,7 +37,11 @@ export function Nav() {
           >
             Instagram ↗
           </a>
+          <ThemeToggle />
         </nav>
+        <div className="md:hidden">
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );
