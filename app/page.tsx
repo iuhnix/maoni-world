@@ -211,7 +211,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ————— Services ————— */}
+      {/* ————— Services / Pricing ————— */}
       <section id="services" className="border-t border-line">
         <div className="mx-auto max-w-6xl scroll-mt-20 px-6 py-24">
           <Eyebrow>Work with me</Eyebrow>
@@ -222,32 +222,58 @@ export default function Home() {
             {[
               {
                 t: "Batch production",
+                p: "from $29",
                 d: "One character, one template — rendered 100× with zero drift. For creators and brands who need a series, not a single image.",
+                f: ["Locked character across every render", "Up to 100 images per batch", "2 revision rounds included"],
+                s: "Batch%20production%20inquiry",
+                c: "Start a batch",
               },
               {
                 t: "Custom pipeline",
+                p: "from $279",
                 d: "Character lock + style lock + verification, then produce on demand. Your IP, my engineering. From 1 to 100.",
+                f: ["Full lock-in: character, style, palette", "Verification report before production", "Priority turnaround"],
+                s: "Custom%20pipeline%20inquiry",
+                c: "Build my pipeline",
               },
               {
                 t: "Self-hosting setup",
+                p: "custom quote",
                 d: "Your own media cloud — photos, video, notes — on hardware you own. No subscriptions, no lock-in.",
+                f: ["Hardware picked for your budget", "Remote setup + handover docs", "30 days of follow-up support"],
+                s: "Self-hosting%20setup%20inquiry",
+                c: "Get a quote",
               },
             ].map((s) => (
               <div
                 key={s.t}
-                className="rounded-xl border border-line bg-card p-8"
+                className="flex flex-col rounded-xl border border-line bg-card p-8"
               >
                 <h3 className="font-display text-xl font-medium">{s.t}</h3>
+                <p className="font-display mt-2 text-3xl font-medium text-accent">{s.p}</p>
                 <p className="mt-3 text-sm leading-relaxed text-muted">{s.d}</p>
+                <ul className="mt-5 flex-1 space-y-2">
+                  {s.f.map((x) => (
+                    <li key={x} className="flex gap-2 text-sm text-muted">
+                      <span className="text-accent">✓</span>
+                      <span>{x}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={`mailto:${CONTACT_EMAIL}?subject=${s.s}`}
+                  className="mt-7 inline-block rounded-full border border-accent px-6 py-2.5 text-center text-sm font-medium text-accent transition-colors hover:bg-accent hover:text-white"
+                >
+                  {s.c}
+                </a>
               </div>
             ))}
           </div>
-          <a
-            href={`mailto:${CONTACT_EMAIL}?subject=Project%20inquiry`}
-            className="mt-10 inline-block rounded-full bg-accent px-7 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
-          >
-            Start with an email
-          </a>
+          <p className="mt-10 text-sm text-muted">
+            Payment is handled securely through Payoneer — credit card or bank
+            transfer. I send a payment request after we agree on scope, so you
+            never pay for work that hasn&apos;t been defined.
+          </p>
         </div>
       </section>
 
